@@ -2,7 +2,7 @@
 
 julia_version = "1.11.7"
 manifest_format = "2.0"
-project_hash = "c54a7518f9a7c877832871b3ee87e329c124cce5"
+project_hash = "c9bc216781548e822d7ae85ec4f17d65543adebb"
 
 [[deps.ADTypes]]
 git-tree-sha1 = "27cecae79e5cc9935255f90c53bb831cc3c870d7"
@@ -135,6 +135,12 @@ git-tree-sha1 = "389ad5c84de1ae7cf0e28e381131c98ea87d54fc"
 uuid = "fa961155-64e5-5f13-b03f-caf6b980ea82"
 version = "0.5.0"
 
+[[deps.CFTime]]
+deps = ["Dates", "Printf"]
+git-tree-sha1 = "2ed76cf4ac70526e3df565435d65e7c7b5c7a77a"
+uuid = "179af706-886a-5703-950a-314cd64e0468"
+version = "0.2.4"
+
 [[deps.CSV]]
 deps = ["CodecZlib", "Dates", "FilePathsBase", "InlineStrings", "Mmap", "Parsers", "PooledArrays", "PrecompileTools", "SentinelArrays", "Tables", "Unicode", "WeakRefStrings", "WorkerUtilities"]
 git-tree-sha1 = "deddd8725e5e1cc49ee205a1964256043720a6c3"
@@ -190,6 +196,12 @@ deps = ["ColorTypes", "FixedPointNumbers", "Reexport"]
 git-tree-sha1 = "37ea44092930b1811e666c3bc38065d7d87fcc74"
 uuid = "5ae59095-9a9b-59fe-a467-6f913c188581"
 version = "0.13.1"
+
+[[deps.CommonDataModel]]
+deps = ["CFTime", "DataStructures", "Dates", "Preferences", "Printf", "Statistics"]
+git-tree-sha1 = "1985a3201d376bf13a866527e19c2272c252870f"
+uuid = "1fbeeb36-5f17-413c-809b-666fb144f157"
+version = "0.3.10"
 
 [[deps.CommonSubexpressions]]
 deps = ["MacroTools"]
@@ -344,6 +356,36 @@ version = "0.7.8"
     Tracker = "9f7883ad-71c0-57eb-9f7f-b5c9e6d3789c"
     Zygote = "e88e6eb3-aa80-5325-afca-941959d7151f"
 
+[[deps.DimensionalData]]
+deps = ["Adapt", "ArrayInterface", "ConstructionBase", "DataAPI", "Dates", "Extents", "Interfaces", "IntervalSets", "InvertedIndices", "IteratorInterfaceExtensions", "LinearAlgebra", "OrderedCollections", "PrecompileTools", "Random", "RecipesBase", "Statistics", "TableTraits", "Tables"]
+git-tree-sha1 = "b95dbd2110c6ad146085f67335f01bab30b70c92"
+uuid = "0703355e-b756-11e9-17c0-8b28908087d0"
+version = "0.29.24"
+
+    [deps.DimensionalData.extensions]
+    DimensionalDataAbstractFFTsExt = "AbstractFFTs"
+    DimensionalDataAlgebraOfGraphicsExt = "AlgebraOfGraphics"
+    DimensionalDataCategoricalArraysExt = "CategoricalArrays"
+    DimensionalDataChainRulesCoreExt = "ChainRulesCore"
+    DimensionalDataDiskArraysExt = "DiskArrays"
+    DimensionalDataMakie = "Makie"
+    DimensionalDataNearestNeighborsExt = "NearestNeighbors"
+    DimensionalDataPythonCall = "PythonCall"
+    DimensionalDataSparseArraysExt = "SparseArrays"
+    DimensionalDataStatsBase = "StatsBase"
+
+    [deps.DimensionalData.weakdeps]
+    AbstractFFTs = "621f4979-c628-5d54-868e-fcf4e3e8185c"
+    AlgebraOfGraphics = "cbdf2221-f076-402e-a563-3d30da359d67"
+    CategoricalArrays = "324d7699-5711-5eae-9e2f-1d82baa6b597"
+    ChainRulesCore = "d360d2e6-b24c-11e9-a2a3-2a2ae2dbcce4"
+    DiskArrays = "3c3547ce-8d99-4f5e-a174-61eb10b00ae3"
+    Makie = "ee78f7c6-11fb-53f2-987a-cfe4a2b5a57a"
+    NearestNeighbors = "b8a86587-4115-5ab1-83bc-aa920d37bbce"
+    PythonCall = "6099a3de-0909-46bc-b1f4-468b9a2dfc0d"
+    SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
+    StatsBase = "2913bbd2-ae8a-5f71-8c99-4fb6c76f3a91"
+
 [[deps.DiskArrays]]
 deps = ["ConstructionBase", "LRUCache", "Mmap", "OffsetArrays"]
 git-tree-sha1 = "297ac5efb7c9c7849114eba76111af2814cac8ec"
@@ -421,6 +463,11 @@ git-tree-sha1 = "3a948313e7a41eb1db7a1e733e6335f17b4ab3c4"
 uuid = "b22a6f82-2f65-5046-a5b2-351ab43fb4e5"
 version = "7.1.1+0"
 
+[[deps.FieldMetadata]]
+git-tree-sha1 = "c279c6eab9767a3f62685e5276c850512e0a1afd"
+uuid = "bf96fef3-21d2-5d20-8afa-0e7d4c32a885"
+version = "0.3.1"
+
 [[deps.FilePathsBase]]
 deps = ["Compat", "Dates"]
 git-tree-sha1 = "3bab2c5aa25e7840a4b065805c0cdfc01f3068d2"
@@ -471,6 +518,12 @@ deps = ["Statistics"]
 git-tree-sha1 = "05882d6995ae5c12bb5f36dd2ed3f61c98cbb172"
 uuid = "53c48c17-4a7d-5ca2-90c5-79b7896eea93"
 version = "0.8.5"
+
+[[deps.Flatten]]
+deps = ["ConstructionBase", "FieldMetadata"]
+git-tree-sha1 = "d3541c658c7e452fefba6c933c43842282cdfd3e"
+uuid = "4c728ea3-d9ee-5c9a-9642-b6f7d7dc04fa"
+version = "0.4.3"
 
 [[deps.Fontconfig_jll]]
 deps = ["Artifacts", "Bzip2_jll", "Expat_jll", "FreeType2_jll", "JLLWrappers", "Libdl", "Libuuid_jll", "Zlib_jll"]
@@ -574,6 +627,12 @@ version = "1.6.0"
     Makie = "ee78f7c6-11fb-53f2-987a-cfe4a2b5a57a"
     RecipesBase = "3cdcf5f2-1ef4-517c-9805-6587b60abb01"
 
+[[deps.GeometryOpsCore]]
+deps = ["DataAPI", "GeoInterface", "StableTasks", "Tables"]
+git-tree-sha1 = "69fc98947b06f8ac4279cf5bf8810373fe042be4"
+uuid = "05efe853-fabf-41c8-927e-7063c8b9f013"
+version = "0.1.7"
+
 [[deps.GettextRuntime_jll]]
 deps = ["Artifacts", "CompilerSupportLibraries_jll", "JLLWrappers", "Libdl", "Libiconv_jll"]
 git-tree-sha1 = "45288942190db7c5f760f59c04495064eedf9340"
@@ -675,6 +734,22 @@ deps = ["Markdown"]
 uuid = "b77e0a4c-d291-57a0-90e8-8db25a27a240"
 version = "1.11.0"
 
+[[deps.Interfaces]]
+git-tree-sha1 = "331ff37738aea1a3cf841ddf085442f31b84324f"
+uuid = "85a1e053-f937-4924-92a5-1367d23b7b87"
+version = "0.3.2"
+
+[[deps.IntervalSets]]
+git-tree-sha1 = "5fbb102dcb8b1a858111ae81d56682376130517d"
+uuid = "8197267c-284f-5f27-9208-e0e47529a953"
+version = "0.7.11"
+weakdeps = ["Random", "RecipesBase", "Statistics"]
+
+    [deps.IntervalSets.extensions]
+    IntervalSetsRandomExt = "Random"
+    IntervalSetsRecipesBaseExt = "RecipesBase"
+    IntervalSetsStatisticsExt = "Statistics"
+
 [[deps.InvertedIndices]]
 git-tree-sha1 = "6da3c4316095de0f5ee2ebd875df8721e7e0bdbe"
 uuid = "41ab1584-1d38-5bbf-9106-f11c6c58b48f"
@@ -731,12 +806,10 @@ deps = ["LinearAlgebra", "MacroTools", "MathOptInterface", "MutableArithmetics",
 git-tree-sha1 = "b201ac010ecdcc3617649175fa59c3dbd9bf96a0"
 uuid = "4076af6c-e467-56ae-b986-b466b2749572"
 version = "1.29.1"
+weakdeps = ["DimensionalData"]
 
     [deps.JuMP.extensions]
     JuMPDimensionalDataExt = "DimensionalData"
-
-    [deps.JuMP.weakdeps]
-    DimensionalData = "0703355e-b756-11e9-17c0-8b28908087d0"
 
 [[deps.Kerberos_krb5_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl"]
@@ -1237,6 +1310,12 @@ version = "1.11.0"
 uuid = "9abbd945-dff8-562f-b5e8-e1ebf5ef1b79"
 version = "1.11.0"
 
+[[deps.ProgressMeter]]
+deps = ["Distributed", "Printf"]
+git-tree-sha1 = "fbb92c6c56b34e1a2c4c36058f68f332bec840e7"
+uuid = "92933f4c-e287-5a05-a399-4b506db050ca"
+version = "1.11.0"
+
 [[deps.PtrArrays]]
 git-tree-sha1 = "1d36ef11a9aaf1e8b74dacc6a731dd1de8fd493d"
 uuid = "43287f4e-b6f4-7ad1-bb20-aadabca52c3d"
@@ -1293,6 +1372,34 @@ version = "1.11.0"
 deps = ["SHA"]
 uuid = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
 version = "1.11.0"
+
+[[deps.Rasters]]
+deps = ["Adapt", "ColorTypes", "CommonDataModel", "ConstructionBase", "Dates", "DimensionalData", "DiskArrays", "Extents", "FillArrays", "Flatten", "GeoFormatTypes", "GeoInterface", "GeometryOpsCore", "LinearAlgebra", "Missings", "Mmap", "OffsetArrays", "ProgressMeter", "RecipesBase", "Reexport", "Setfield", "Statistics"]
+git-tree-sha1 = "e741f9f9e51a7fd4527cf6df07251cc7a339ffc5"
+uuid = "a3a2b9e3-a471-40c9-b274-f788e487c689"
+version = "0.14.6"
+
+    [deps.Rasters.extensions]
+    RastersArchGDALExt = "ArchGDAL"
+    RastersCoordinateTransformationsExt = "CoordinateTransformations"
+    RastersGRIBDatasetsExt = "GRIBDatasets"
+    RastersMakieExt = "Makie"
+    RastersNCDatasetsExt = "NCDatasets"
+    RastersProjExt = "Proj"
+    RastersRasterDataSourcesExt = "RasterDataSources"
+    RastersStatsBaseExt = "StatsBase"
+    RastersZarrDatasetsExt = "ZarrDatasets"
+
+    [deps.Rasters.weakdeps]
+    ArchGDAL = "c9ce4bd3-c3d5-55b8-8973-c0e20141b8c3"
+    CoordinateTransformations = "150eb455-5306-5404-9cee-2592286d6298"
+    GRIBDatasets = "82be9cdb-ee19-4151-bdb3-b400788d9abc"
+    Makie = "ee78f7c6-11fb-53f2-987a-cfe4a2b5a57a"
+    NCDatasets = "85f8d34a-cbdd-5861-8df4-14fed0d494ab"
+    Proj = "c94c279d-25a6-4763-9509-64d165bea63e"
+    RasterDataSources = "3cb90ccd-e1b6-4867-9617-4276c8b2ca36"
+    StatsBase = "2913bbd2-ae8a-5f71-8c99-4fb6c76f3a91"
+    ZarrDatasets = "519a4cdf-1362-424a-9ea1-b1d782dbb24b"
 
 [[deps.RecipesBase]]
 deps = ["PrecompileTools"]
@@ -1415,6 +1522,11 @@ deps = ["Random"]
 git-tree-sha1 = "95af145932c2ed859b63329952ce8d633719f091"
 uuid = "860ef19b-820b-49d6-a774-d7a799459cd3"
 version = "1.0.3"
+
+[[deps.StableTasks]]
+git-tree-sha1 = "c4f6610f85cb965bee5bfafa64cbeeda55a4e0b2"
+uuid = "91464d47-22a1-43fe-8b7f-2d57ee82463f"
+version = "0.1.7"
 
 [[deps.StackViews]]
 deps = ["OffsetArrays"]
